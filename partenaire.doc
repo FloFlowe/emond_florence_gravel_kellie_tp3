@@ -13,3 +13,7 @@ Florence Emond
 
 - Création du Github
 - Ajout Partenaire.doc et assets
+
+- "Imput" s'écrit plutôt "input" donc les noms de variable ont des fautes, on changera ça si on en a envie, sinon c'est pas plus grave que ça.
+- J'ai changé le type du label du téléphone (section client et livraison) pour "phone" (avant c'était "tel", mais ce n'est pas un type qui existe)
+- Ajout du "onclick" au bouton de commande.
