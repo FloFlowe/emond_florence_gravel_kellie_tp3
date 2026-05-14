@@ -1,14 +1,15 @@
 // TITRE DE LA PAGE //
-
 const titre = document.createElement("h1");
 titre.textContent = "Commande de Pizzas";
 document.body.appendChild(titre);
 
+
+
+
+
 // SÉLECTION DE PIZZA //
 
-
 //**** PIZZA MARGHERITA ****//
-
 const form = document.createElement("form");
 form.setAttribute("id", "form");
 document.body.appendChild(form);
@@ -21,7 +22,6 @@ margheritaLegend.textContent = "Pizza Margherita : ";
 fieldsetMargherita.appendChild(margheritaLegend);
 
 // CHECKBOX MARGHERITA //
-
 let checkboxMargherita = document.createElement("input");
 checkboxMargherita.setAttribute("type", "checkbox");
 checkboxMargherita.setAttribute("id", "margherita");
@@ -29,7 +29,6 @@ checkboxMargherita.setAttribute("name", "margherita");
 fieldsetMargherita.appendChild(checkboxMargherita);
 
 // QUANTITÉ //
-
 let margheritaLabel = document.createElement("label");
 margheritaLabel.setAttribute("for", "margherita"); 
 margheritaLabel.textContent = " Margherita Quantité : ";
@@ -47,14 +46,12 @@ fieldsetMargherita.appendChild(margheritaInput);
 fieldsetMargherita.appendChild(document.createElement("br"));
 
 // GARNITURES //
-
 let margheritaGarniture = document.createElement("label");
 margheritaGarniture.setAttribute("for", "margheritaGarniture");
 margheritaGarniture.textContent = " Garnitures : ";
 fieldsetMargherita.appendChild(margheritaGarniture);
 
 // OPTION FROMAGE //
-
 let margheritaFromage = document.createElement("input");
 margheritaFromage.setAttribute("type", "checkbox");
 margheritaFromage.setAttribute("id", "margheritaFromage");
@@ -66,7 +63,6 @@ margheritaFromageLabel.textContent = " Fromage ";
 fieldsetMargherita.appendChild(margheritaFromageLabel);
 
 // OPTION CHAMPIGNONS //
-
 let margheritaChampignons = document.createElement("input");
 margheritaChampignons.setAttribute("type", "checkbox");
 margheritaChampignons.setAttribute("id", "margheritaChampignons");
@@ -78,7 +74,6 @@ margheritaChampignonsLabel.textContent = " Champignons ";
 fieldsetMargherita.appendChild(margheritaChampignonsLabel);
 
 // OPTION OIGNONS //
-
 let margheritaOignons = document.createElement("input");
 margheritaOignons.setAttribute("type", "checkbox");
 margheritaOignons.setAttribute("id", "margheritaOignons");
@@ -91,8 +86,9 @@ fieldsetMargherita.appendChild(margheritaOignonsLabel);
 
 
 
-//***** PIZZA PEPPERONI *****//
 
+
+//***** PIZZA PEPPERONI *****//
 const fieldsetPepperoni = document.createElement("fieldset");
 form.appendChild(fieldsetPepperoni);
 
@@ -101,7 +97,6 @@ pepperoniLegend.textContent = "Pizza Pepperoni : ";
 fieldsetPepperoni.appendChild(pepperoniLegend);
 
 // CHECKBOX PEPPERONI //
-
 let checkboxPepperoni = document.createElement("input");
 checkboxPepperoni.setAttribute("type", "checkbox");
 checkboxPepperoni.setAttribute("id", "pepperoni");
@@ -109,7 +104,6 @@ checkboxPepperoni.setAttribute("name", "pepperoni");
 fieldsetPepperoni.appendChild(checkboxPepperoni);
 
 // QUANTITÉ //
-
 let pepperoniLabel = document.createElement("label");
 pepperoniLabel.setAttribute("for", "pepperoni"); 
 pepperoniLabel.textContent = " Pepperoni Quantité : ";
@@ -127,14 +121,12 @@ fieldsetPepperoni.appendChild(pepperoniInput);
 fieldsetPepperoni.appendChild(document.createElement("br"));
 
 // GARNITURES //
-
 let pepperoniGarniture = document.createElement("label");
 pepperoniGarniture.setAttribute("for", "pepperoniGarniture");
 pepperoniGarniture.textContent = " Garnitures : ";
 fieldsetPepperoni.appendChild(pepperoniGarniture);
 
 // OPTION FROMAGE //
-
 let pepperoniFromage = document.createElement("input");
 pepperoniFromage.setAttribute("type", "checkbox");
 pepperoniFromage.setAttribute("id", "pepperoniFromage");
@@ -146,7 +138,6 @@ pepperoniFromageLabel.textContent = " Fromage ";
 fieldsetPepperoni.appendChild(pepperoniFromageLabel);
 
 // OPTION CHAMPIGNONS //
-
 let pepperoniChampignons = document.createElement("input");
 pepperoniChampignons.setAttribute("type", "checkbox");
 pepperoniChampignons.setAttribute("id", "pepperoniChampignons");
@@ -158,7 +149,6 @@ pepperoniChampignonsLabel.textContent = " Champignons ";
 fieldsetPepperoni.appendChild(pepperoniChampignonsLabel);
 
 // OPTION OIGNONS //
-
 let pepperoniOignons = document.createElement("input");
 pepperoniOignons.setAttribute("type", "checkbox");
 pepperoniOignons.setAttribute("id", "pepperoniOignons");
@@ -171,8 +161,9 @@ fieldsetPepperoni.appendChild(pepperoniOignonsLabel);
 
 
 
-//**** PIZZA VÉGÉTARIENNE ****//
 
+
+//**** PIZZA VÉGÉTARIENNE ****//
 const fieldsetVegetarienne = document.createElement("fieldset");
 form.appendChild(fieldsetVegetarienne);
 
@@ -181,7 +172,6 @@ vegetarienneLegend.textContent = "Pizza Végétarienne : ";
 fieldsetVegetarienne.appendChild(vegetarienneLegend);
 
 // CHECKBOX VÉGÉTARIENNE //
-
 let checkboxVegetarienne = document.createElement("input");
 checkboxVegetarienne.setAttribute("type", "checkbox");
 checkboxVegetarienne.setAttribute("id", "vegetarienne");
@@ -189,7 +179,6 @@ checkboxVegetarienne.setAttribute("name", "vegetarienne");
 fieldsetVegetarienne.appendChild(checkboxVegetarienne);
 
 // QUANTITÉ //
-
 let vegetarienneLabel = document.createElement("label");
 vegetarienneLabel.setAttribute("for", "vegetarienne"); 
 vegetarienneLabel.textContent = " Végétarienne Quantité : ";
@@ -207,14 +196,12 @@ fieldsetVegetarienne.appendChild(vegetarienneInput);
 fieldsetVegetarienne.appendChild(document.createElement("br"));
 
 // GARNITURES //
-
 let vegetarienneGarniture = document.createElement("label");
 vegetarienneGarniture.setAttribute("for", "vegetarienneGarniture");
 vegetarienneGarniture.textContent = " Garnitures : ";
 fieldsetVegetarienne.appendChild(vegetarienneGarniture);
 
 // OPTION FROMAGE //
-
 let vegetarienneFromage = document.createElement("input");
 vegetarienneFromage.setAttribute("type", "checkbox");
 vegetarienneFromage.setAttribute("id", "vegetarienneFromage");
@@ -226,7 +213,6 @@ vegetarienneFromageLabel.textContent = " Fromage ";
 fieldsetVegetarienne.appendChild(vegetarienneFromageLabel);
 
 // OPTION CHAMPIGNONS //
-
 let vegetarienneChampignons = document.createElement("input");
 vegetarienneChampignons.setAttribute("type", "checkbox");
 vegetarienneChampignons.setAttribute("id", "vegetarienneChampignons");
@@ -238,7 +224,6 @@ vegetarienneChampignonsLabel.textContent = " Champignons ";
 fieldsetVegetarienne.appendChild(vegetarienneChampignonsLabel);
 
 // OPTION OIGNONS //
-
 let vegetarienneOignons = document.createElement("input");
 vegetarienneOignons.setAttribute("type", "checkbox");
 vegetarienneOignons.setAttribute("id", "vegetarienneOignons");
@@ -251,8 +236,9 @@ fieldsetVegetarienne.appendChild(vegetarienneOignonsLabel);
 
 
 
-//**** PIZZA SILICIENNE ****//
 
+
+//**** PIZZA SILICIENNE ****//
 const fieldsetSilicienne = document.createElement("fieldset");
 form.appendChild(fieldsetSilicienne);
 
@@ -261,7 +247,6 @@ silicienneLegend.textContent = "Pizza Silicienne : ";
 fieldsetSilicienne.appendChild(silicienneLegend);
 
 // CHECKBOX SILICIENNE //
-
 let checkboxSilicienne = document.createElement("input");
 checkboxSilicienne.setAttribute("type", "checkbox");
 checkboxSilicienne.setAttribute("id", "silicienne");
@@ -269,7 +254,6 @@ checkboxSilicienne.setAttribute("name", "silicienne");
 fieldsetSilicienne.appendChild(checkboxVegetarienne);
 
 // QUANTITÉ //
-
 let silicienneLabel = document.createElement("label");
 silicienneLabel.setAttribute("for", "silicienne"); 
 silicienneLabel.textContent = " Silicienne Quantité : ";
@@ -287,14 +271,12 @@ fieldsetSilicienne.appendChild(silicienneInput);
 fieldsetSilicienne.appendChild(document.createElement("br"));
 
 // GARNITURES //
-
 let silicienneGarniture = document.createElement("label");
 silicienneGarniture.setAttribute("for", "silicienneGarniture");
 silicienneGarniture.textContent = " Garnitures : ";
 fieldsetSilicienne.appendChild(silicienneGarniture);
 
 // OPTION FROMAGE //
-
 let silicienneFromage = document.createElement("input");
 silicienneFromage.setAttribute("type", "checkbox");
 silicienneFromage.setAttribute("id", "silicienneFromage");
@@ -306,7 +288,6 @@ silicienneFromageLabel.textContent = " Fromage ";
 fieldsetSilicienne.appendChild(silicienneFromageLabel);
 
 // OPTION CHAMPIGNONS //
-
 let silicienneChampignons = document.createElement("input");
 silicienneChampignons.setAttribute("type", "checkbox");
 silicienneChampignons.setAttribute("id", "silicienneChampignons");
@@ -318,7 +299,6 @@ silicienneChampignonsLabel.textContent = " Champignons ";
 fieldsetSilicienne.appendChild(silicienneChampignonsLabel);
 
 // OPTION OIGNONS //
-
 let silicienneOignons = document.createElement("input");
 silicienneOignons.setAttribute("type", "checkbox");
 silicienneOignons.setAttribute("id", "silicienneOignons");
@@ -331,8 +311,9 @@ fieldsetSilicienne.appendChild(silicienneOignonsLabel);
 
 
 
-//****  MODE DE PAIEMENT ****//
 
+
+//****  MODE DE PAIEMENT ****//
 const fieldsetPaiement = document.createElement("fieldset");
 form.appendChild(fieldsetPaiement);
 
@@ -341,7 +322,6 @@ paiementLegend.textContent = "Mode de paiement : ";
 fieldsetPaiement.appendChild(paiementLegend);
 
 // CARTE DE CRÉDIT //
-
 let radioCredit = document.createElement("input");
 radioCredit.setAttribute("type", "radio");
 radioCredit.setAttribute("id", "credit");
@@ -352,7 +332,6 @@ fieldsetPaiement.appendChild(document.createTextNode(" Carte de Crédit (En lign
 fieldsetPaiement.appendChild(document.createElement("br"));
 
 // DÉBIT //
-
 let radioDebitCredit = document.createElement("input");
 radioDebitCredit.setAttribute("type", "radio");
 radioDebitCredit.setAttribute("id", "debitCredit");
@@ -363,7 +342,6 @@ fieldsetPaiement.appendChild(document.createTextNode(" Débit/Crédit (À la por
 fieldsetPaiement.appendChild(document.createElement("br"));
 
 // ESPÈCES //
-
 let radioEspeces = document.createElement("input");
 radioEspeces.setAttribute("type", "radio");
 radioEspeces.setAttribute("id", "especes");
@@ -375,8 +353,9 @@ fieldsetPaiement.appendChild(document.createElement("br"));
 
 
 
-//**** INFORMATIONS SUR LE CLIENT ****//
 
+
+//**** INFORMATIONS SUR LE CLIENT ****//
 const fieldsetClient = document.createElement("fieldset");
 form.appendChild(fieldsetClient);
 
@@ -385,7 +364,6 @@ clientLegend.textContent = "Informations sur le client : ";
 fieldsetClient.appendChild(clientLegend);
 
 // NOM //
-
 let nomClient = document.createElement("label");
 nomClient.textContent = "Nom : ";
 let nomImput = document.createElement("input");
@@ -397,7 +375,6 @@ fieldsetClient.appendChild(nomClient);
 fieldsetClient.appendChild(document.createElement("br"));
 
 // PRÉNOM //
-
 let prenomClient = document.createElement("label");
 prenomClient.textContent = "Prénom : ";
 let prenomImput = document.createElement("input");
@@ -409,11 +386,10 @@ fieldsetClient.appendChild(prenomClient);
 fieldsetClient.appendChild(document.createElement("br"));
 
 // TÉLÉPHONE //
-
 let telephoneClient = document.createElement("label");
 telephoneClient.textContent = "Téléphone : ";
 let telephoneImput = document.createElement("input");
-telephoneImput.setAttribute("type", "tel");
+telephoneImput.setAttribute("type", "phone");
 telephoneImput.setAttribute("name", "telephone");
 telephoneImput.setAttribute("size", "15");
 telephoneClient.appendChild(telephoneImput);
@@ -421,7 +397,6 @@ fieldsetClient.appendChild(telephoneClient);
 fieldsetClient.appendChild(document.createElement("br"));
 
 // ADRESSE COMPLÈTE //
-
 let adresseClient = document.createElement("label");
 adresseClient.textContent = "Adresse : ";
 let adresseImput = document.createElement("input");
@@ -434,8 +409,9 @@ fieldsetClient.appendChild(document.createElement("br"));
 
 
 
-//**** INFORMATIONS SUR LA LIVRAISON ****//
 
+
+//**** INFORMATIONS SUR LA LIVRAISON ****//
 const fieldsetLivraison = document.createElement("fieldset");
 form.appendChild(fieldsetLivraison);
 
@@ -444,7 +420,6 @@ livraisonLegend.textContent = "Informations sur la livraison : ";
 fieldsetLivraison.appendChild(livraisonLegend);
 
 // NOM ET PRÉNOM //
-
 let nomLivraison = document.createElement("label");
 nomLivraison.textContent = "Nom et prénom : ";
 let livraisonNomImput = document.createElement("input");
@@ -456,11 +431,10 @@ fieldsetLivraison.appendChild(nomLivraison);
 fieldsetLivraison.appendChild(document.createElement("br"));
 
 // TÉLÉPHONE //
-
 let telephoneLivraison = document.createElement("label");
 telephoneLivraison.textContent = "Téléphone : ";
 let livraisonTelephoneImput = document.createElement("input");
-livraisonTelephoneImput.setAttribute("type", "tel");
+livraisonTelephoneImput.setAttribute("type", "phone");
 livraisonTelephoneImput.setAttribute("name", "telephoneLivraison");
 livraisonTelephoneImput.setAttribute("size", "15");
 telephoneLivraison.appendChild(livraisonTelephoneImput);
@@ -468,7 +442,6 @@ fieldsetLivraison.appendChild(telephoneLivraison);
 fieldsetLivraison.appendChild(document.createElement("br"));
 
 // ADRESSE DE LIVRAISON //
-
 let adresseLivraison = document.createElement("label");
 adresseLivraison.textContent = "Adresse : ";
 let adresseLivraisonImput = document.createElement("input");
@@ -479,14 +452,74 @@ adresseLivraison.appendChild(adresseLivraisonImput);
 fieldsetLivraison.appendChild(adresseLivraison);
 fieldsetLivraison.appendChild(document.createElement("br"));
 
-//**** BOUTON DE VALIDATION DE LA COMMANDE ****//
 
-let submitButton = document.createElement("button");
+
+
+
+//**** BOUTON DE VALIDATION DE LA COMMANDE ****//
+const submitButton = document.createElement("button");
 submitButton.setAttribute("type", "submit");
+submitButton.onclick = commander();
 submitButton.textContent = "Commander";
 form.appendChild(submitButton);
 
 
 
-//**** CODE JAVASCRIPT ****//
 
+
+//**** CODE JAVASCRIPT ****//
+function commander(){
+validationChamps();
+
+}
+
+
+
+function validationChamps(){
+    
+
+    // PIZZA //
+    let paiementPorte;  // Pour savoir si la fenêtre de paiement doit afficher ou non.
+    if ((checkboxMargherita.checked && margheritaInput.value >=1) || (checkboxPepperoni.checked && pepperoniInput.value >=1) || (checkboxSilicienne.checked && silicienneInput.value >=1) || (checkboxVegetarienne.checked && vegetarienneInput.value >=1)) {
+       //L'utilisateur a bien commandé de la pizza. 
+    } else {
+        //L'utilisateur a coché aucune pizza, donc on doit demander de cocher avant d'afficher la facture.
+    }
+
+    // PAIEMENT //
+    if (radioCredit.checked) {
+        paiementPorte = false;
+    } else {
+      if (radioDebitCredit.checked) {
+        paiementPorte = true;
+      } else {
+        if (radioEspeces.checked) {
+            paiementPorte = true;
+        } else {
+            //L'utilisateur a coché aucune option de paiement, donc on doit demander de cocher avant d'afficher la facture.
+        }
+      }  
+    }
+
+    // INFORMATION CLIENT ET LIVRAISON //
+    while (nomClient.value == "" || prenomClient.value == "" || telephoneClient.value == "" || adresseClient.value == "" || nomLivraison.value == "" || telephoneLivraison.value == "" || adresseLivraison.value == "") {
+        alert("Données manquantes du client et/ou de la livraison");
+    }
+    while (telephoneClient.value != "[0-9]{3}-[0-9]{3}-[0-9]{4}" || telephoneLivraison.value != "[0-9]{3}-[0-9]{3}-[0-9]{4}") { //format que l'on peut metter dans un input "pattern" en html. je sais pas si il est utilisable dans le js comme ça.
+        alert("Format du/des numéro de téléphone incorrect");
+    }
+
+}
+
+
+
+
+function calculTotaux(){
+
+}
+
+
+
+function facture(){
+    
+}
