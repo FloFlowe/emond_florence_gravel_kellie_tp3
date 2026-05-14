@@ -470,7 +470,7 @@ form.appendChild(submitButton);
 //**** CODE JAVASCRIPT ****//
 function commander(){
 validationChamps();
-
+calculTotaux();
 }
 
 
@@ -480,33 +480,33 @@ function validationChamps(){
 
     // PIZZA //
     let paiementPorte;  // Pour savoir si la fenêtre de paiement doit afficher ou non.
-    if ((checkboxMargherita.checked && margheritaInput.value >=1) || (checkboxPepperoni.checked && pepperoniInput.value >=1) || (checkboxSilicienne.checked && silicienneInput.value >=1) || (checkboxVegetarienne.checked && vegetarienneInput.value >=1)) {
+    if ((checkboxMargherita.checked && margheritaInput.value >=1) || (checkboxPepperoni.checked && pepperoniInput.value >=1) || (checkboxSilicienne.checked && silicienneInput.value >=1) || (checkboxVegetarienne.checked && vegetarienneInput.value >=1)) {   //Serait préférable de vérifier avec un while.
        //L'utilisateur a bien commandé de la pizza. 
     } else {
-        //L'utilisateur a coché aucune pizza, donc on doit demander de cocher avant d'afficher la facture.
+        alert("Veuillez ajouter un ou des articles à la commande.");
     }
 
     // PAIEMENT //
-    if (radioCredit.checked) {
+    if (radioCredit.checked  == true) {  //Serait préférable de vérifier avec un while.
         paiementPorte = false;
     } else {
-      if (radioDebitCredit.checked) {
+      if (radioDebitCredit.checked  == true) {
         paiementPorte = true;
       } else {
-        if (radioEspeces.checked) {
+        if (radioEspeces.checked  == true) {
             paiementPorte = true;
         } else {
-            //L'utilisateur a coché aucune option de paiement, donc on doit demander de cocher avant d'afficher la facture.
+            alert("Veuillez choisir un mode de paiement.");
         }
       }  
     }
 
     // INFORMATION CLIENT ET LIVRAISON //
     while (nomClient.value == "" || prenomClient.value == "" || telephoneClient.value == "" || adresseClient.value == "" || nomLivraison.value == "" || telephoneLivraison.value == "" || adresseLivraison.value == "") {
-        alert("Données manquantes du client et/ou de la livraison");
+        alert("Données manquantes du client et/ou de la livraison.");
     }
     while (telephoneClient.value != "[0-9]{3}-[0-9]{3}-[0-9]{4}" || telephoneLivraison.value != "[0-9]{3}-[0-9]{3}-[0-9]{4}") { //format que l'on peut metter dans un input "pattern" en html. je sais pas si il est utilisable dans le js comme ça.
-        alert("Format du/des numéro de téléphone incorrect");
+        alert("Format du/des numéro de téléphone incorrect.");
     }
 
 }
@@ -515,11 +515,83 @@ function validationChamps(){
 
 
 function calculTotaux(){
+    // VARIABLES PRIX ($) //
+    const PRIX_PIZZA_MARGHERITA = 16;
+    const PRIX_PIZZA_PEPPERONI = 18;
+    const PRIX_PIZZA_VEGETARIENNE = 18;
+    const PRIX_PIZZA_SILICIENNE = 20;
+    const GARNITURE = 2;
+    const TAXE_TPS = 0.05;
+    const TAXE_TVQ = 0.0975;
 
-}
+    let totalPrixMargherita = 0;
+    let totalPrixPepperoni = 0;
+    let totalPrixVegetarienne = 0;
+    let totalPrixSilicienne = 0;
+    let totalGarniture = 0;
+    let totalCommande = 0;
+    let totalCommandeTaxe = 0;
+
+    // CALCUL PRIX PIZZA //
+    totalPrixMargherita = margheritaInput.value*PRIX_PIZZA_MARGHERITA;
+    totalPrixPepperoni = pepperoniInput.value*PRIX_PIZZA_PEPPERONI;
+    totalPrixVegetarienne = vegetarienneInput*PRIX_PIZZA_VEGETARIENNE;
+    totalPrixSilicienne = silicienneInput*PRIX_PIZZA_SILICIENNE;
+
+    // CALCUL PRIX GARNITURES//
+    // MARGHERITA //
+    if (margheritaFromage.checked == true) {
+        totalGarniture = totalGarniture + GARNITURE;
+    }
+    if (margheritaChampignons.checked == true) {
+        totalGarniture = totalGarniture + GARNITURE;
+    }
+    if (margheritaOignons.checked == true) {
+        totalGarniture = totalGarniture + GARNITURE;
+    }
+
+    // PEPPERONI //
+    if (pepperoniFromage.checked == true) {
+        totalGarniture = totalGarniture + GARNITURE;
+    }
+    if (pepperoniChampignons.checked == true) {
+        totalGarniture = totalGarniture + GARNITURE;
+    }
+    if (pepperoniOignons.checked == true) {
+        totalGarniture = totalGarniture + GARNITURE;
+    }
+
+    // VEGETARIENNE //
+    if (vegetarienneFromage.checked == true) {
+        totalGarniture = totalGarniture + GARNITURE;
+    }
+    if (vegetarienneChampignons.checked == true) {
+        totalGarniture = totalGarniture + GARNITURE;
+    }
+    if (vegetarienneOignons.checked == true) {
+        totalGarniture = totalGarniture + GARNITURE;
+    }
+
+    // SILICIENNE //
+    if (silicienneFromage.checked == true) {
+        totalGarniture = totalGarniture + GARNITURE;
+    }
+    if (silicienneChampignons.checked == true) {
+        totalGarniture = totalGarniture + GARNITURE;
+    }
+    if (silicienneOignons.checked == true) {
+        totalGarniture = totalGarniture + GARNITURE;
+    }
+
+    // CALCUL TOTAL //
+    totalCommande = totalPrixMargherita + totalPrixPepperoni + totalPrixVegetarienne + totalPrixSilicienne + totalGarniture;
+
+    // CALCUL TOTAL TAXES //
+    totalCommandeTaxe = (TAXE_TPS + TAXE_TVQ)*totalCommande;
+}   
 
 
 
 function facture(){
-    
+ 
 }
