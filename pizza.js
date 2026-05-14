@@ -471,6 +471,7 @@ form.appendChild(submitButton);
 function commander(){
 validationChamps();
 calculTotaux();
+facture()
 }
 
 
@@ -509,6 +510,7 @@ function validationChamps(){
         alert("Format du/des numéro de téléphone incorrect.");
     }
 
+    return paiementPorte;
 }
 
 
@@ -539,48 +541,66 @@ function calculTotaux(){
     totalPrixSilicienne = silicienneInput*PRIX_PIZZA_SILICIENNE;
 
     // CALCUL PRIX GARNITURES//
+    //variables pour contenir les types de garnitures choisit par pizza
+    let margheritaGarniture = "Garnitures:";
+    let pepperoniGarniture = "Garnitures:";
+    let vegetarienneGarniture = "Garnitures:";
+    let silicienneGarniture = "Garnitures:";
+
     // MARGHERITA //
     if (margheritaFromage.checked == true) {
         totalGarniture = totalGarniture + GARNITURE;
+        margheritaGarniture = margheritaGarniture + " Fromage";
     }
     if (margheritaChampignons.checked == true) {
         totalGarniture = totalGarniture + GARNITURE;
+        margheritaGarniture = margheritaGarniture + " Champignons";
     }
     if (margheritaOignons.checked == true) {
         totalGarniture = totalGarniture + GARNITURE;
+        margheritaGarniture = margheritaGarniture + " Oignons";
     }
 
     // PEPPERONI //
     if (pepperoniFromage.checked == true) {
         totalGarniture = totalGarniture + GARNITURE;
+        pepperoniGarniture = pepperoniGarniture + " Fromage";
     }
     if (pepperoniChampignons.checked == true) {
         totalGarniture = totalGarniture + GARNITURE;
+        pepperoniGarniture = pepperoniGarniture + " Champignons";
     }
     if (pepperoniOignons.checked == true) {
         totalGarniture = totalGarniture + GARNITURE;
+        pepperoniGarniture = pepperoniGarniture + " Oignons";
     }
 
     // VEGETARIENNE //
     if (vegetarienneFromage.checked == true) {
         totalGarniture = totalGarniture + GARNITURE;
+        vegetarienneGarniture = vegetarienneGarniture + " Fromage";
     }
     if (vegetarienneChampignons.checked == true) {
         totalGarniture = totalGarniture + GARNITURE;
+        vegetarienneGarniture = vegetarienneGarniture + " Champignons";
     }
     if (vegetarienneOignons.checked == true) {
         totalGarniture = totalGarniture + GARNITURE;
+        vegetarienneGarniture = vegetarienneGarniture + " Oignons";
     }
 
     // SILICIENNE //
     if (silicienneFromage.checked == true) {
         totalGarniture = totalGarniture + GARNITURE;
+        silicienneGarniture = silicienneGarniture + " Fromage";
     }
     if (silicienneChampignons.checked == true) {
         totalGarniture = totalGarniture + GARNITURE;
+        silicienneGarniture = silicienneGarniture + " Champignons";
     }
     if (silicienneOignons.checked == true) {
         totalGarniture = totalGarniture + GARNITURE;
+        silicienneGarniture = silicienneGarniture + " Oignons";
     }
 
     // CALCUL TOTAL //
@@ -593,5 +613,26 @@ function calculTotaux(){
 
 
 function facture(){
- 
+    const FACTURE = [
+        {Pizza: "Margherita" + margheritaGarniture,  Prix: PRIX_PIZZA_MARGHERITA, Quantité: margheritaInput.value, Total: totalPrixMargherita},
+        {Pizza: "Pepperoni" + pepperoniGarniture, Prix: PRIX_PIZZA_PEPPERONI, Quantité: pepperoniInput.value, Total: totalPrixPepperoni},
+        {Pizza: "Végétarienne" + vegetarienneGarniture, Prix: PRIX_PIZZA_VEGETARIENNE, Quantité: vegetarienneInput.value, Total: totalPrixVegetarienne},
+        {Pizza: "Silicienne" + silicienneGarniture, Prix: PRIX_PIZZA_SILICIENNE, Quantité: silicienneInput.value, Total: totalPrixSilicienne},
+    ];
+    
+    console.table(FACTURE); //Affiche structure du tableau en colonnes
+    calculTotaux(totalCommandeTaxe);
+
+    // BOUTON PAYER //
+    if (validationChamps(paiementPorte) == false) {
+        const paymentButton = document.createElement("button");
+        paymentButton.setAttribute("type", "submit");
+        paymenButton.onclick = payerCommande();
+        paymentButton.textContent = "Payer ma commande";
+        form.appendChild(submitButton);
+
+        function payerCommande(){
+            //INTERFACE DE PAIEMENT À COMPLÉTER
+        }
+    }
 }
