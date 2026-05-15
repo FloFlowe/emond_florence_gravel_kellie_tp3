@@ -8,11 +8,24 @@ Kellie Gravel
 - Menu des informations du client
 - Menu des informations sur la livraison
 - Bouton de validation
+- Function payerCommande()
+- Formulaire de l'option carte de crédit
+- Function Valider()
+- Débugage
+
+- While -> if, sinon boucle infini
+- submitButton.onclick = commander(); sans parenthèse sinon il s'exécute dans l'immédiatement sans faire la suite.
+- Il manquait une constante pour le format de numéro de téléphone pour qu'il soit comparé par js. Source: https://stackabuse.com/validate-phone-numbers-in-javascript-with-regular-expressions/ et .test pour comparer les numéros entrés et le format de la constante.
 
 Florence Emond
 
 - Création du Github
 - Ajout Partenaire.doc et assets
+- Function ValidationChamps()
+- Function calculTotaux()
+- Function facture()
+- Debugage
+
 
 - "Imput" s'écrit plutôt "input" donc les noms de variable ont des fautes, on changera ça si on en a envie, sinon c'est pas plus grave que ça.
 - J'ai changé le type du label du téléphone (section client et livraison) pour "phone" (avant c'était "tel", mais ce n'est pas un type qui existe)
