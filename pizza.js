@@ -459,7 +459,7 @@ fieldsetLivraison.appendChild(document.createElement("br"));
 //**** BOUTON DE VALIDATION DE LA COMMANDE ****//
 const submitButton = document.createElement("button");
 submitButton.setAttribute("type", "submit");
-submitButton.onclick = commander();
+submitButton.onclick = commander;
 submitButton.textContent = "Commander";
 form.appendChild(submitButton);
 
@@ -470,8 +470,8 @@ form.appendChild(submitButton);
 //**** CODE JAVASCRIPT ****//
 function commander(){
 validationChamps();
-calculTotaux();
-facture()
+/*calculTotaux();
+facture()*/
 }
 
 
@@ -503,10 +503,14 @@ function validationChamps(){
     }
 
     // INFORMATION CLIENT ET LIVRAISON //
-    while (nomClient.value == "" || prenomClient.value == "" || telephoneClient.value == "" || adresseClient.value == "" || nomLivraison.value == "" || telephoneLivraison.value == "" || adresseLivraison.value == "") {
+
+    const formatTelephone = /^\d{3}-\d{3}-\d{4}$/; // Pour faire une variable qui prend le format voulu pour le numéro de téléphone. Source: https://stackabuse.com/validate-phone-numbers-in-javascript-with-regular-expressions/
+
+    if (nomClient.value == "" || prenomClient.value == "" || telephoneClient.value == "" || adresseClient.value == "" || nomLivraison.value == "" || telephoneLivraison.value == "" || adresseLivraison.value == "") {
         alert("Données manquantes du client et/ou de la livraison.");
     }
-    while (telephoneClient.value != "[0-9]{3}-[0-9]{3}-[0-9]{4}" || telephoneLivraison.value != "[0-9]{3}-[0-9]{3}-[0-9]{4}") { //format que l'on peut metter dans un input "pattern" en html. je sais pas si il est utilisable dans le js comme ça.
+    
+   if (!formatTelephone.test(telephoneClient.value) || !formatTelephone.test(telephoneLivraison.value)) { // .test permet de tester le format
         alert("Format du/des numéro de téléphone incorrect.");
     }
 
@@ -632,7 +636,64 @@ function facture(){
         form.appendChild(submitButton);
 
         function payerCommande(){
-            //INTERFACE DE PAIEMENT À COMPLÉTER
+            //INTERFACE DE PAIEMENT
+            const formPayerCommande = document.createElement("form");
+            form.setAttribute("id", "formPayerCommande");
+            document.body.appendChild(formPayerCommande);
+
+            const fieldsetPayementCommande = document.createElement("fieldset");
+            formPayerCommande.appendChild(fieldsetPayementCommande);
+
+            let nomCredit = document.createElement("label");
+            nomCredit.textContent = "Nom et prénom : ";
+            let creditNomInput = document.createElement("input");
+            creditNomInput.setAttribute("type", "text");
+            creditNomInput.setAttribute("name", "nomCredit");
+            creditNomInput.setAttribute("size", "15");
+            nomCredit.appendChild(creditNomInput);
+            fieldsetPayementCommande.appendChild(nomCredit);
+            fieldsetPayementCommande.appendChild(document.createElement("br"));
+
+            let numeroCredit = document.createElement("label");
+            numeroCredit.textContent = "Numéro de carte de crédit : ";
+            let numeroCreditInput = document.createElement("input");
+            numeroCreditInput.setAttribute("type", "text");
+            numeroCreditInput.setAttribute("name", "numeroCredit");
+            numeroCreditInput.setAttribute("size", "15");
+            numeroCredit.appendChild(numeroCreditInput);
+            fieldsetPayementCommande.appendChild(numeroCredit);
+            fieldsetPayementCommande.appendChild(document.createElement("br"));
+
+            let expirationCredit = document.createElement("label");
+            expirationCredit.textContent = "Date d'expiration : ";
+            let expirationCreditInput = document.createElement("input");
+            expirationCreditInput.setAttribute("type", "text");
+            expirationCreditInput.setAttribute("name", "expirationCredit");
+            expirationCreditInput.setAttribute("size", "15");
+            expirationCredit.appendChild(expirationCreditInput);
+            fieldsetPayementCommande.appendChild(expirationCredit);
+            fieldsetPayementCommande.appendChild(document.createElement("br"));
+
+            let codeCredit = document.createElement("label");
+            codeCredit.textContent = "Code : ";
+            let codeCreditInput = document.createElement("input");
+            codeCreditInput.setAttribute("type", "text");
+            codeCreditInput.setAttribute("name", "codeCredit");
+            codeCreditInput.setAttribute("size", "15");
+            codeCredit.appendChild(codeCreditInput);
+            fieldsetPayementCommande.appendChild(codeCredit);
+            fieldsetPayementCommande.appendChild(document.createElement("br"));
+
+            const termineButton = document.createElement("button");
+            termineButton.setAttribute("type", "submit");
+            termineButton.onclick = Valider();
+            termineButton.textContent = "Valider";
+            fieldsetPayementCommande.appendChild(termineButton);
+
+            function termineButton(){
+                alert("Votre commande est en route!")
+            }
         }
     }
 }
+
